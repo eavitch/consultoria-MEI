@@ -128,7 +128,7 @@ section{padding:52px 0}
 <div>
 <h1>Consultoria e Serviços para MEI</h1>
 <p>Soluções administrativas para facilitar a rotina do seu MEI. Serviços pontuais e planos de acompanhamento para manter seu MEI organizado, regularizado e com suas principais obrigações em dia.</p>
-<div class="btns"><a class="btn" data-wa href="#atendimento">Falar sobre meu MEI</a><a class="btn alt" href="#planos">Ver planos</a></div>
+<div class="btns"><a class="btn" data-wa="Olá, vim pelo site e gostaria de falar sobre meu MEI." href="#atendimento">Falar sobre meu MEI</a><a class="btn alt" href="#planos">Ver planos</a></div>
 </div>
 <div class="check" aria-label="Exemplos do que acompanhamos">
 <h3>O que mantemos em dia</h3>
@@ -161,7 +161,7 @@ section{padding:52px 0}
 <h2>Diagnóstico MEI</h2>
 <p class="lead">Uma análise da situação atual do seu MEI. Verificação de pendências, declarações, débitos, parcelamentos e situação cadastral, com orientação sobre os próximos passos.</p>
 </div>
-<div class="price"><span>Investimento</span><strong>R$ 49,90</strong><a class="btn" data-wa href="#atendimento">Quero o diagnóstico</a></div>
+<div class="price"><span>Investimento</span><strong>R$ 49,90</strong><a class="btn" data-wa="Olá, vim pelo site e gostaria de fazer um diagnóstico do meu MEI." href="#atendimento">Quero o diagnóstico</a></div>
 </div></section>
 
 <section id="planos"><div class="wrap">
@@ -171,18 +171,18 @@ section{padding:52px 0}
 <div class="plan">
 <h3>Plano Essencial</h3><div class="pr">R$ 59,90<small>/mês</small></div><p>Para quem precisa de acompanhamento básico.</p>
 <ul class="list"><li>Consulta periódica de pendências</li><li>Lembretes de DAS</li><li>Orientações sobre obrigações do MEI</li><li>Orientação para emissão de notas</li><li>Até 1 atendimento por mês</li></ul>
-<a class="btn alt" data-wa href="#atendimento">Contratar Essencial</a>
+<a class="btn alt" data-wa="Olá, tenho interesse na consultoria e gostaria de contratar o Plano Essencial." href="#atendimento">Contratar Essencial</a>
 </div>
 <div class="plan hl">
 <span class="tag">Acompanhamento mais próximo</span>
 <h3>Plano Acompanhamento</h3><div class="pr">R$ 89,90<small>/mês</small></div><p>Para quem deseja um acompanhamento mais próximo.</p>
 <ul class="list"><li>Tudo do Plano Essencial</li><li>Acompanhamento de pendências</li><li>Acompanhamento de parcelamentos</li><li>Suporte administrativo</li><li>Até 3 atendimentos por mês</li><li>Até 5 notas fiscais por mês</li></ul>
-<a class="btn" data-wa href="#atendimento">Contratar Acompanhamento</a>
+<a class="btn" data-wa="Olá, tenho interesse na consultoria e gostaria de contratar o Plano Acompanhamento." href="#atendimento">Contratar Acompanhamento</a>
 </div>
 <div class="plan p3">
 <h3>Plano Completo</h3><div class="pr">R$ 129,90<small>/mês</small></div><p>Para quem busca um suporte administrativo mais completo.</p>
 <ul class="list"><li>Tudo do Plano Acompanhamento</li><li>Suporte administrativo mais próximo</li><li>Acompanhamento das principais obrigações</li><li>Até 5 atendimentos por mês</li><li>Até 10 notas fiscais por mês</li><li>DASN-SIMEI anual incluída</li></ul>
-<a class="btn alt" data-wa href="#atendimento">Contratar Completo</a>
+<a class="btn alt" data-wa="Olá, tenho interesse na consultoria e gostaria de contratar o Plano Completo." href="#atendimento">Contratar Completo</a>
 </div>
 </div></div></section>
 
@@ -208,7 +208,7 @@ section{padding:52px 0}
 <section id="atendimento" class="cta"><div class="wrap">
 <h2>Precisa abrir, regularizar ou colocar seu MEI em dia?</h2>
 <p class="lead">Fale com a Eduarda e descubra qual serviço ou plano é mais adequado para sua necessidade.</p>
-<a class="btn" data-wa href="#atendimento">Entrar em contato</a>
+<a class="btn" data-wa="Olá, vim pelo site e gostaria de regularizar meu MEI." href="#atendimento">Entrar em contato</a>
 </div></section>
 </main>
 
@@ -219,7 +219,7 @@ Eduarda Martins · Consultoria e Serviços para MEI · WhatsApp (83) 99825-4371<
 </div>
 </footer>
 
-<a href="#" class="float-wa" data-wa aria-label="Atendimento por WhatsApp">
+<a href="#" class="float-wa" data-wa="Olá, vim pelo site e gostaria de mais informações sobre a consultoria." aria-label="Atendimento por WhatsApp">
   <img src="img/wpp-logo.webp" alt="WhatsApp">
 </a>
 <script>
@@ -227,7 +227,8 @@ Eduarda Martins · Consultoria e Serviços para MEI · WhatsApp (83) 99825-4371<
 var WHATSAPP = "5583998254371";
 if (WHATSAPP) {
   document.querySelectorAll("[data-wa]").forEach(function(a){
-    a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent("Olá, tenho interesse na sua consultoria e gostaria de mais informações.");
+    var msg = a.getAttribute("data-wa") || "Olá, tenho interesse na sua consultoria e gostaria de mais informações.";
+    a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
     a.target = "_blank"; a.rel = "noopener";
   });
 }
